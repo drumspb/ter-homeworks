@@ -3,11 +3,13 @@
 
 variable "cloud_id" {
   type        = string
+  default = "b1golipav4ipa0ltifko" 
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
 }
 
 variable "folder_id" {
   type        = string
+  default = "b1goiv8hbuqegdqk3k0r" 
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
 }
 
@@ -33,6 +35,15 @@ variable "vpc_name" {
 
 variable "vms_ssh_root_key" {
   type        = string
-  default     = "<your_ssh_ed25519_key>"
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINa/Eyvhmr2G9H7AKbLP4/peDIF/98b/yeE4ajEqOdZ0 <Git>"
   description = "ssh-keygen -t ed25519"
 }
+
+variable "fqdn_domain" {
+  type        = string
+  default     = "netology.ru"
+  description = "The domain name used for constructing FQDNs for instances."
+}
+
+
+
