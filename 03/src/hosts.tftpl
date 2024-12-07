@@ -1,0 +1,26 @@
+[webservers]
+%{ if length(webservers) > 0 ~}
+%{ for instance in webservers ~}
+${instance.name} ansible_host=${instance.network_interface[0].nat_ip_address} fqdn=${lookup(instance.labels, "hostname", "${instance.id}.auto.internal")}
+%{ endfor ~}
+%{ else ~}
+# No web servers available
+%{ endif ~}
+
+[databases]
+%{ if length(databases) > 0 ~}
+%{ for instance in databases ~}
+${instance.name} ansible_host=${instance.network_interface[0].nat_ip_address} fqdn=${lookup(instance.labels, "hostname", "${instance.id}.auto.internal")}
+%{ endfor ~}
+%{ else ~}
+# No databases available
+%{ endif ~}
+
+[storage]
+%{ if length(storage) > 0 ~}
+%{ for instance in storage ~}
+${instance.name} ansible_host=${instance.network_interface[0].nat_ip_address} fqdn=${lookup(instance.labels, "hostname", "${instance.id}.auto.internal")}
+%{ endfor ~}
+%{ else ~}
+# No storage available
+%{ endif ~}

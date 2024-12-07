@@ -35,7 +35,7 @@ variable "vms_metadata" {
   default = {
     default = {
       serial_port_enable = 1
-      ssh_keys           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINa/Eyvhmr2G9H7AKbLP4/peDIF/98b/yeE4ajEqOdZ0 <Git>"
+    ssh_keys           = ""
     }
   }
 }
