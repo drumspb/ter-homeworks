@@ -34,8 +34,8 @@ variable "vpc_name" {
 ###common vars
 
 variable "vms_ssh_root_key" {
-  type        = string
-  default     = "your_ssh_ed25519_key"
+  type        = any
+  default     = "/home/pcadmin/.ssh/id_ed25519.pub"
   description = "ssh-keygen -t ed25519"
 }
 
@@ -51,6 +51,12 @@ variable "vm_db_name" {
   type        = string
   default     = "netology-develop-platform-db"
   description = "example vm_db_ prefix"
+}
+
+variable "username" {
+  type        = string
+  default     = "drum"
+  description = "ssh username"
 }
 
 
